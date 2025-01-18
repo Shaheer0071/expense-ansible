@@ -20,10 +20,10 @@
       login_host: mt15.store
     register: mysql_info
 
-  - name: print the input
+  - name: print the output
     ansibile.builtin.debug:
       msg: "mysql info:{{mysql_info}}"
-      
+
 
 
 
