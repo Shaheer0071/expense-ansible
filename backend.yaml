@@ -10,7 +10,9 @@
 
   - name: install nodejs
     ansibile.builtin.package:
-     install: present
-     
+      name: nodejs
+      install: present
+      
+
 
   
