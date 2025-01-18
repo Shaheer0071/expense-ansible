@@ -23,7 +23,7 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: ExpenseApp@1
-      login_host: mt15.store
+      login_host: mysql.mt15.store
     register: mysql_info
     ignore_errors: true
 
@@ -35,6 +35,7 @@
     ansible.builtin.command: "mysql_secure_installation --set-root-pass ExpenseApp@1"
     when: mysql_info.failed is true
     
+
 
 
 
