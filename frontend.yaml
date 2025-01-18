@@ -6,6 +6,7 @@
     ansible.builtin.dnf:
       name: nginx
       state: installed
+
   - name: enable and start nginx
     ansible.builtin.package:
       name: nginx
@@ -13,7 +14,7 @@
       enable: yes
 
    - name: delete html directory
-    ansible.builtin.file:
+     ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
 
@@ -43,4 +44,5 @@
       state: restarted
       name: nginx
       
+
 
