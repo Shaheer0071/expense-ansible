@@ -11,7 +11,7 @@
   - name: install nodejs
     ansibile.builtin.package:
       name: nodejs
-      state: install
+      state: present
       
 
 
