@@ -48,7 +48,7 @@
   - name: install python libs
     ansible.builtin.pip:
     name: "{{ item }}"
-      executable: pip3.9
+    executable: pip3.9
     loop:
      - PyMysql
      - cryptography
@@ -69,6 +69,7 @@
       daemon_reload: true
       name: backend
       
+
 
 
 
