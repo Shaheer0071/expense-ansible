@@ -6,8 +6,8 @@
     ansible.builtin.pip:
      name: {{ "item" }}
      loop:
-     -PyMsql
-     -cryptography
+     - PyMsql
+     - cryptography
      executable: pip3.9
 
 
