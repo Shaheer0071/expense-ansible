@@ -6,11 +6,8 @@
   tasks:
   - name: install mysql libraries
     ansible.builtin.pip:
-     name: "{{ item }}"
+     name: PyMysql
      executable: pip3.9
-     loop:
-     - PyMysql
-     - cryptograph
 
 
   - name: install mysql server
@@ -39,7 +36,7 @@
   - name: setup root password
     ansible.builtin.command: "mysql_secure_installation --set-root-pass ExpenseApp@1"
     when: mysql_info.failed is true
-    
+
 
 
 
