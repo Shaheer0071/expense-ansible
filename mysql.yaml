@@ -25,11 +25,12 @@
       login_password: ExpenseApp@1
       login_host: mt15.store
     register: mysql_info
+    ignore_errors: true
 
   - name: print the output
     ansible.builtin.debug:
       msg: "mysql info: {{ mysql_info }}"
-      
+
 
 
 
