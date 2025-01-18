@@ -8,10 +8,10 @@
       state: installed
 
   - name: enable and start nginx
-    ansible.builtin.package:
+    ansible.builtin.service:
       name: nginx
       state: started
-      
+      enable: yes
 
   - name: delete html directory
     ansible.builtin.file:
