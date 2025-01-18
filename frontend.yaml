@@ -44,5 +44,12 @@
       state: restarted
       name: nginx
 
+  - name: Reload frontend service
+    ansible.builtin.systemd_service:
+      name: frontend.service
+      state: reload
+      
+
+
 
 
