@@ -62,12 +62,12 @@
       login_host: mysql.mt15.store
       target: /app/schema/backend.sql
 
-  - name: daemon reload and restart the service
-    ansible.builtin.systemd_service:
-      enable: true
-      state: restarted
-      daemon_reload: true
-      name: backend
+  # - name: daemon reload and restart the service
+  #   ansible.builtin.systemd_service:
+  #     enable: true
+  #     state: restarted
+  #     daemon_reload: true
+  #     name: backend
 
   - name: Reload backend service
     ansible.builtin.systemd_service:
