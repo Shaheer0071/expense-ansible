@@ -16,13 +16,17 @@
   - name: connect to mysql server
     community.mysql.mysql_info:
       login_user: root
-      login_host: ExpenseApp@1
+      login_password: ExpenseApp@1
+      login_host: mt15.store
     register: mysql_info
 
   - name: print the input
     ansibile.builtin.debug:
       msg: "mysql info:{{mysql_info}}"
       
+
+
+
 
       
 
