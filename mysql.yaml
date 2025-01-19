@@ -27,7 +27,7 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{ mysql_root_password }}"
-      login_host: mysql.daws82s.online
+      login_host: mysql.mt15.online
     register: mysql_info
     ignore_errors: true
 
@@ -39,6 +39,7 @@
     ansible.builtin.command: " mysql_secure_installation --set-root-pass {{ mysql_root_password }} "
     when: mysql_info.failed is true
     
+
 
 
 
