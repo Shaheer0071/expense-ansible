@@ -10,9 +10,9 @@
     ansible.builtin.package:
       name: "{{ item }}"
       state: present
-    loop:
-     -PyMySQL
-     -nodejs
+     loop:
+      -nodejs
+      -mysql
 
   - name: create expense user
     ansible.builtin.user:
@@ -42,6 +42,8 @@
      src: backend.service
      dest: /etc/systemd/system/backend.service
 
+  
+
   - name: import mysql data
     community.mysql.mysql_db:
      state: import
@@ -50,7 +52,9 @@
      login_password: Expense App@1
      login_host: mysql.mt15.store
      target: /app/schema/backend.sql
+
      
+
 
 
 
