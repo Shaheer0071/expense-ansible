@@ -7,11 +7,16 @@
       name: nginx
       state: installed
 
-  - name: enable and start nginx
+  # - name: enable and start nginx
+  #   ansible.builtin.service:
+  #     name: nginx
+  #     state: started
+  #     enabled: yes
+  
+  - name: Restart nginx
     ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes
+     name: nginx
+     state: restarted
 
   - name: delete html directory
     ansible.builtin.file:
@@ -44,3 +49,4 @@
       state: restarted
       name: nginx
       
+
