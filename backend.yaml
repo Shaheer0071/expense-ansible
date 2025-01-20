@@ -8,12 +8,8 @@
     ansible.builtin.command: dnf module enable nodejs:20 -y
   - name: install nodejs
     ansible.builtin.package:
-      name: "{{ item }}"
+      name: nodejs
       state: present
-    loop:
-     -nodejs
-     -mysql
-
   - name: create expense user
     ansible.builtin.user:
      name: expense
@@ -42,8 +38,6 @@
      src: backend.service
      dest: /etc/systemd/system/backend.service
 
-  
-
   - name: import mysql data
     community.mysql.mysql_db:
      state: import
@@ -53,10 +47,7 @@
      login_host: mysql.mt15.store
      target: /app/schema/backend.sql
      
-
-
-
-
+     
 
 
 
