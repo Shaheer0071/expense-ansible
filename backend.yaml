@@ -38,6 +38,14 @@
      src: backend.service
      dest: /etc/systemd/system/backend.service
 
+  - name: install python libs
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3.9
+    loop:
+    - cryptography
+    - PyMySQL
+
   - name: import mysql data
     community.mysql.mysql_db:
      state: import
@@ -46,7 +54,7 @@
      login_password: Expense App@1
      login_host: mysql.mt15.store
      target: /app/schema/backend.sql
-     
+
      
 
 
